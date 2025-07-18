@@ -34,7 +34,7 @@ def test_p_average():
 def test_avg_t():
     data = TRTData(FOLDER.parent.joinpath("examples/data/Linz.csv"), 't [s]', 'Tf [degC]', col_power='P [W]',
                    decimal=',')
-    data_avg = TRTData(FOLDER.parent.joinpath("examples/data/test_linz_dt.csv"), 't [s]', col_temp_in='Tfin [degC]',
+    data_avg = TRTData(FOLDER.parent.joinpath("test/data/test_linz_dt.csv"), 't [s]', col_temp_in='Tfin [degC]',
                        col_temp_out='Tfout [degC]', col_power='P [W]', decimal=',')
 
     assert np.allclose(data.temperature_array, data_avg.temperature_array)

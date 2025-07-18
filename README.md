@@ -3,6 +3,9 @@
 [![PyPI version](https://badge.fury.io/py/pyTRT.svg)](https://badge.fury.io/py/pyTRT)
 [![Tests](https://github.com/wouterpeere/pyTRT/actions/workflows/test.yml/badge.svg)](https://github.com/wouterpeere/pyTRT/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/wouterpeere/pyTRT/branch/main/graph/badge.svg?token=I9WWHW60OD)](https://codecov.io/gh/wouterpeere/pyTRT)
+[![Downloads](https://static.pepy.tech/personalized-badge/pyTRT?period=total&units=international_system&left_color=black&right_color=blue&left_text=Downloads)](https://pepy.tech/project/pyTRT)
+[![Downloads](https://static.pepy.tech/personalized-badge/pyTRT?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads%20last%20week)](https://pepy.tech/project/pyTRT)
+[![Read the Docs](https://readthedocs.org/projects/pyTRT/badge/?version=latest)](https://pyTRT.readthedocs.io/en/latest/)
 
 pyTRT is a python package with different methods for the interpretation of thermal response tests. The goal of this
 package is to
