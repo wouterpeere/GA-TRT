@@ -8,10 +8,9 @@ pyTRT is a python package with different methods for the interpretation of therm
 package is to
 bundle all available methodologies for TRT analysis so the user can easily compare one to another.
 
-Currently the following methods are implemented:
+Currently, the following methods are implemented:
 
-- Traditional ILS, based on the work of (Gehlin, 2002)
-- GA-TRT, based on the work of (Focaccia et al., 2013)
+- Traditional ILS, based on the work of (Gehlin, S., 2002)
 
 ## Requirements
 
@@ -27,18 +26,30 @@ For the tests
 
 ## Getting started
 
+In order to use `pyTrt`, one should first import the TRT measurement data. After that, any method inside `pyTRT` can be
+used for the analysis.
+
+```python
+from pyTRT import TRTData, ILS
+
+# import load
+linz = TRTData('examples/data/Linz.csv', 't [s]', 'Tf [degC]', col_power='P [W]',
+               decimal=',', undisturbed_ground=11.7)
+
+# analyse the measurement data
+result = ILS(linz, 150, 0.133 / 2, 2.3e6)
+
+print(f'Thermal conductivity {result.thermal_conductivity}')
+print(f'Effective borehole thermal resistance {result.borehole_resistance}')
+````
+
 ## Citation
 
 If you use this python package, please cite it using the citation below.
 
 Next to that, please cite the work of the author from which you used the methodology.
 
-### Traditional ILS
-
-Sara Focaccia, Francesco Tinti, and Roberto Bruno. 2013. A software tool for geostatistical analysis of thermal response
-test data: GA-TRT. Comput. Geosci. 59 (September, 2013), 163–170. https://doi.org/10.1016/j.cageo.2013.06.003
-
-### GA-TRT
+**Traditional ILS**
 
 Gehlin, S., 2002. Thermal Response Test. Method, Development and Evaluation (Ph. D. dissertation). Department of
 Environmental Engineering, University of Lulea, Sweden.

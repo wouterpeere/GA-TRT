@@ -10,8 +10,8 @@ import numpy as np
 class TRTData:
 
     def __init__(self, file_location: str, col_time: str, col_temp_avg: str = None, col_temp_in: str = None,
-                 col_temp_out: str = None, col_power: str = None, average_power: float = None, start_index: int = 0,
-                 **kwargs):
+                 col_temp_out: str = None, col_power: str = None, average_power: float = None,
+                 undisturbed_ground: float = None, start_index: int = 0, **kwargs):
         """
         This function loads and stores the pyTRT data from a csv file.
         This csv file should contain header values and columns for at least the timestamps and fluid temperature
@@ -36,6 +36,9 @@ class TRTData:
             any power measurements that are provided in the csv file.
         start_index : int
             The start index at which the steady state conditions of the borehole begins. (Default 0)
+        undisturbed_ground : float
+            The undisturbed ground temperature in degrees Celsius.
+            When not provided, the first average fluid temperature is used.
         kwargs
             The seperator and decimal point can be provided as respectively 'sep' and 'decimal'
         """
@@ -58,6 +61,8 @@ class TRTData:
 
         if len(self._power_array) != 0 and average_power is not None:
             warnings.warn('The power array will be overwritten with the average power.')
+        self.undisturbed_ground_temperature: float = undisturbed_ground if undisturbed_ground is not None else \
+            self._temperature_array[0]
 
     def load_trt_data(self, file_location: str, col_time: str, col_temp_avg: str = None, col_temp_in: str = None,
                       col_temp_out: str = None, col_power: str = None, **kwargs) -> None:
