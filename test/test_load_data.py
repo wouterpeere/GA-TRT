@@ -15,8 +15,11 @@ def test_value_errors_trt():
         TRTData(FOLDER.parent.joinpath("examples/data/Linz.csv"), 't [s]', 'Tf [degC]', decimal=',', )
     with pytest.raises(ValueError):
         TRTData(FOLDER.parent.joinpath("examples/data/Linz.csv"), 't [s]', decimal=',')
-        with pytest.raises(ValueError):
-            TRTData(FOLDER.parent.joinpath("examples/data/Linz.csv"), 't [s]', col_temp_in='Tf [degC]', decimal=',')
+    with pytest.raises(ValueError):
+        TRTData(FOLDER.parent.joinpath("examples/data/Linz.csv"), 't [s]', col_temp_in='Tf [degC]', decimal=',')
+    with pytest.raises(ValueError):
+        TRTData(FOLDER.parent.joinpath("examples/data/Linz.csv"), 't [s]', 'Tf [degC]', 'Tf [degC]', 'Tf [degC]',
+                decimal=',')
 
 
 def test_p_average():
