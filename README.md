@@ -1,5 +1,9 @@
 # pyTRT
 
+[![PyPI version](https://badge.fury.io/py/pyTRT.svg)](https://badge.fury.io/py/pyTRT)
+[![Tests](https://github.com/wouterpeere/pyTRT/actions/workflows/test.yml/badge.svg)](https://github.com/wouterpeere/pyTRT/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/wouterpeere/pyTRT/branch/main/graph/badge.svg?token=I9WWHW60OD)](https://codecov.io/gh/wouterpeere/pyTRT)
+
 pyTRT is a python package with different methods for the interpretation of thermal response tests. The goal of this
 package is to
 bundle all available methodologies for TRT analysis so the user can easily compare one to another.

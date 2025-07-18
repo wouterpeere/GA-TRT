@@ -1,6 +1,8 @@
 """
 This file contains the base class for the loading and storing of the pyTRT measurements.
 """
+import warnings
+
 import pandas as pd
 import numpy as np
 
@@ -42,8 +44,7 @@ class TRTData:
         self._temperature_array: np.ndarray = np.array([])
         self._power_array: np.ndarray = np.array([])
 
-        if file_location is not None:
-            self.load_trt_data(file_location, col_time, col_temp_avg, col_temp_in, col_temp_out, col_power, **kwargs)
+        self.load_trt_data(file_location, col_time, col_temp_avg, col_temp_in, col_temp_out, col_power, **kwargs)
 
         if start_index < 0 or start_index > len(self._time_array):
             raise ValueError('Please provide a valid start index.')
@@ -56,7 +57,7 @@ class TRTData:
         self._avg_power = average_power
 
         if len(self._power_array) != 0 and average_power is not None:
-            raise Warning('The power array will be overwritten with the average power.')
+            warnings.warn('The power array will be overwritten with the average power.')
 
     def load_trt_data(self, file_location: str, col_time: str, col_temp_avg: str = None, col_temp_in: str = None,
                       col_temp_out: str = None, col_power: str = None, **kwargs) -> None:
@@ -110,7 +111,7 @@ class TRTData:
             self._temperature_array = np.array(df[col_temp_avg])
             return
 
-        self._temperature_array = np.array(df[col_temp_in] - df[col_temp_out])
+        self._temperature_array = np.array(df[col_temp_in] + df[col_temp_out]) / 2
 
     @property
     def time_array(self) -> np.ndarray:
