@@ -31,13 +31,13 @@ problem, follow the steps outlined in the contribution workflow.
 
 This section outlines the steps for contributing to *pyTRT*. This workflow
 is inspired by [Trunk Based Development](https://trunkbaseddevelopment.com/), with
-short-lived feature branches and releases from tags on the `master`.
+short-lived feature branches and releases from tags on the `main`.
 
-1. **Open a new [issue](https://github.com/MassimoCimmino/pygfunction/issues).**
+1. **Open a new [issue](https://github.com/wouterpeere/pytrt/issues).**
 2. **Use a short and descriptive title.** When proposing an enhancement,
    describe in details what the enhancement would entail. If you plan to implement
    the enhancement yourself, provide a step-by-step plan for the implementation.
-3. **Explain how the enhancement benefits _pygfunction_.**
+3. **Explain how the enhancement benefits _pyTRT.**
 4. **Create (checkout) a new branch from the `main`.** The branch name should
    follow the naming convention: `issue#_shortDescription`. For example:
    issue1_loadAggregation.
