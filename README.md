@@ -60,4 +60,4 @@ Environmental Engineering, University of Lulea, Sweden.
 ## Collaborate
 
 There are many different methods for the analysis of TRT measurement data. If you have developed a method of your own
-and you want to include it in this package, you are encouraged to share this. Please follow the contribution workflow.
+and you want to include it in this package, you are encouraged to share this. Please follow the [contribution workflow](CONTRIBUTING.md).
