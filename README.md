@@ -15,6 +15,12 @@ Currently, the following methods are implemented:
 
 - Traditional ILS, based on the work of (Gehlin, S., 2002)
 
+### Read The Docs
+
+`pyTRT` has an elaborate documentation where all the functionalities of the tool are explained, with examples,
+literature and validation. This can be found
+on [https://pytrt.readthedocs.io/en/latest/](https://pytrt.readthedocs.io/en/latest/).
+
 ## Requirements
 
 This code is tested with Python 3.10, 3.11, 3.12 and 3.13 and requires the following libraries (the versions mentioned
@@ -26,6 +32,40 @@ are the ones with which the code is tested)
 For the tests
 
 - pytest >= 7.1.2
+
+## Quick start
+
+### Installation
+
+One can install `pyTRT` by running Pip and running the command
+
+```
+pip install pyTRT
+```
+
+or one can install a newer development version using
+
+```
+pip install --extra-index-url https://test.pypi.org/simple/ pyTRT
+```
+
+Developers can clone this repository.
+
+It is a good practise to use virtual environments (venv) when working on a (new) Python project so different Python and
+package versions don't conflict with eachother. For `pyTRT`, Python 3.9 or higher is recommended. General information
+about Python virtual environments can be found [here](https://docs.Python.org/3.9/library/venv.html) and
+in [this article](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/).
+
+### Check installation
+
+To check whether everything is installed correctly, run the following command
+
+```
+pytest --pyargs GHEtool
+```
+
+This runs some predefined cases to see whether all the internal dependencies work correctly. All test should pass
+successfully.
 
 ## Getting started
 
@@ -60,4 +100,5 @@ Environmental Engineering, University of Lulea, Sweden.
 ## Collaborate
 
 There are many different methods for the analysis of TRT measurement data. If you have developed a method of your own
-and you want to include it in this package, you are encouraged to share this. Please follow the [contribution workflow](CONTRIBUTING.md).
+and you want to include it in this package, you are encouraged to share this. Please follow
+the [contribution workflow](CONTRIBUTING.md).
