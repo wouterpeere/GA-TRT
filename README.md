@@ -61,7 +61,7 @@ in [this article](https://www.freecodecamp.org/news/how-to-setup-virtual-environ
 To check whether everything is installed correctly, run the following command
 
 ```
-pytest --pyargs GHEtool
+pytest --pyargs pyTRT
 ```
 
 This runs some predefined cases to see whether all the internal dependencies work correctly. All test should pass
